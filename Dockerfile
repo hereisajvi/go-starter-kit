@@ -1,6 +1,6 @@
 FROM --platform=$BUILDPLATFORM golang:1.18-buster as builder
 
-WORKDIR /go/src/github.com/chiefcake/go-starter-kit
+WORKDIR /go/src/github.com/hereisajvi/go-starter-kit
 
 COPY go.* .
 
@@ -16,6 +16,6 @@ FROM alpine:3.16.0
 
 RUN apk --no-cache add ca-certificates
 
-COPY --from=builder /go/src/github.com/chiefcake/go-starter-kit .
+COPY --from=builder /go/src/github.com/hereisajvi/go-starter-kit .
 
 CMD [ "./go-starter-kit" ]
